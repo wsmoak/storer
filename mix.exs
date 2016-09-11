@@ -16,7 +16,7 @@ defmodule Storer.Mixfile do
   def application do
     [applications:
       [
-        :logger, :persistent_storage
+        :logger, :persistent_storage, :timex
       ],
       mod: {Storer, []}]
   end
@@ -32,7 +32,8 @@ defmodule Storer.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:persistent_storage, git: "https://github.com/cellulose/persistent_storage.git", branch: "master"}
+      {:persistent_storage, git: "https://github.com/cellulose/persistent_storage.git", branch: "master"},
+      {:timex, "~> 2.1.4"},
     ]
   end
 end
