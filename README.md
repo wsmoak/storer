@@ -1,24 +1,9 @@
 # Storer
 
-**TODO: Add description**
+Simple example of using persistent_storage in a worker under supervision.
 
-## Installation
+See: https://github.com/cellulose/persistent_storage
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+Start it with `iex -S mix` and watch the debug output.
 
-  1. Add `storer` to your list of dependencies in `mix.exs`:
-
-    ```elixir
-    def deps do
-      [{:storer, "~> 0.1.0"}]
-    end
-    ```
-
-  2. Ensure `storer` is started before your application:
-
-    ```elixir
-    def application do
-      [applications: [:storer]]
-    end
-    ```
-
+When Storer.Worker is started, it initializes the storage location (/tmp/storer) and then sends itself a message. A second later, when it receives the message, it writes a value. It then sends itself another message.  When that message is received, it retrieves the value from storage.
