@@ -33,7 +33,7 @@ defmodule Storer.Mixfile do
   defp deps do
     [
       {:persistent_storage, git: "https://github.com/cellulose/persistent_storage.git", branch: "master"},
-      {:timex, "~> 2.1.4"},
+      {:timex, "~> 3.0"},
     ]
   end
 end
